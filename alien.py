@@ -28,4 +28,6 @@ class Alien(Sprite):
         self.rect.x = self.x
 
 
-    
+    def red_alien(self):
+        self.image = pygame.image.load('images/red_JFK.jpg')
+        self.settings.alien_speed = self.settings.buffed_alien_scale

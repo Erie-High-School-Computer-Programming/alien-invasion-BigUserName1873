@@ -139,6 +139,7 @@ class AlienInvasion:
 
 
     def _check_bullets_alien_collision(self):
+
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
 
         if collisions:
@@ -146,6 +147,10 @@ class AlienInvasion:
             self.sb.prep_score()
             self.scream_sfx.play()
             self.sb.check_high_score()
+
+            if len(self.aliens) == 1:
+                for alien in self.aliens:
+                    alien.red_alien()
 
         if not self.aliens:
             self.bullets.empty()
